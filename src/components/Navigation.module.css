@@ -1,0 +1,22 @@
+.segmentedControl {
+    background-color: var(--mantine-color-olive-5);
+    border-radius: var(--mantine-radius-xl);
+    padding: 4px;
+}
+
+.segmentedControlIndicator {
+    background-color: var(--mantine-color-white);
+    box-shadow: var(--mantine-shadow-sm);
+    border-radius: var(--mantine-radius-xl);
+}
+
+.segmentedControlLabel {
+    color: var(--mantine-color-white);
+    font-weight: 700;
+    border-radius: var(--mantine-radius-xl);
+
+    &[data-active] {
+        color: var(--mantine-color-olive-8);
+        font-weight: 800;
+    }
+}
