@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import { Image, Box, Title, Text, Flex, Paper, Container } from '@mantine/core';
+import classes from './ContentShowcase.module.css';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export function ContentShowcase() {
@@ -33,25 +34,34 @@ export function ContentShowcase() {
         },
     ];
 
-    const [activeId, setActiveId] = useState<string>(contentData[0].id);
+    const initialIndex = Math.ceil(contentData.length / 2) - 1;
+    const [activeId, setActiveId] = useState<string>(contentData[initialIndex].id);
+    const [embla, setEmbla] = useState<any | null>(null);
     const activeItem = contentData.find(item => item.id === activeId) || contentData[0];
 
     return (
-        <Container size="xl" py="xl">
+        <Container size="xl" py={{ base: 'md', md: 'xl' }}>
             <Title order={1} mb="xl" ta="center" fw={300}>{t.content.title}</Title>
 
             {/* Thumbnails Carousel */}
             <Box mb={50}>
                 <Carousel
-                    slideSize={{ base: '70%', sm: '40%', md: '30%' }}
+                    slideSize={{ base: '85%', sm: '40%', md: '30%' }}
                     slideGap="md"
+                    emblaOptions={{ align: 'center', containScroll: false }}
                     withIndicators
+                    initialSlide={initialIndex}
+                    getEmblaApi={setEmbla}
                     onSlideChange={(index) => setActiveId(contentData[index].id)}
+                    classNames={{
+                        indicator: classes.indicator,
+                        indicators: classes.indicators,
+                    }}
                     styles={{
                         slide: { transition: 'transform 0.3s ease' },
                     }}
                 >
-                    {contentData.map((item) => (
+                    {contentData.map((item, index) => (
                         <Carousel.Slide key={item.id}>
                             <Paper
                                 radius="md"
@@ -64,7 +74,10 @@ export function ContentShowcase() {
                                     transition: 'all 0.3s ease',
                                     border: activeId === item.id ? '2px solid var(--mantine-color-olive-6)' : '1px solid transparent'
                                 }}
-                                onClick={() => setActiveId(item.id)}
+                                onClick={() => {
+                                    setActiveId(item.id);
+                                    embla?.scrollTo(index);
+                                }}
                             >
                                 <Image src={item.imageSrc} radius="sm" height={200} fit="cover" />
                                 <Title order={4} mt="sm" ta="center">{item.title}</Title>
@@ -76,8 +89,8 @@ export function ContentShowcase() {
 
             {/* Dynamic Detail View */}
             <Container size="md">
-                <Paper p="xl" radius="lg" bg="olive.0">
-                    <Flex direction={{ base: 'column', md: 'row' }} gap="xl" align="center">
+                <Paper p={{ base: 'md', md: 'xl' }} radius="lg" bg="olive.0">
+                    <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 'md', md: 'xl' }} align="center">
                         <Image src={activeItem.imageSrc} w={{ base: '100%', md: 300 }} radius="md" />
                         <Box style={{ flex: 1 }}>
                             <Title order={2} mb="sm" c="olive.9">{activeItem.title}</Title>

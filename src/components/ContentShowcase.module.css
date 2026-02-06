@@ -1,0 +1,15 @@
+.indicators {
+    bottom: -40px;
+}
+
+.indicator {
+    width: 12px;
+    height: 4px;
+    transition: width 250ms ease;
+    background-color: var(--mantine-color-olive-5);
+}
+
+.indicator[data-active] {
+    width: 40px;
+    background-color: white;
+}

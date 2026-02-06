@@ -55,7 +55,7 @@ export const dictionary = {
     },
     ko: {
         hero: {
-            subtitle: '생성형 AI의 시작인 프롬프트로 이야기의 뼈대인 플롯을 그려내는 곳',
+            subtitle: '생성형 AI의 시작인 프롬프트로\n이야기의 뼈대인 플롯을 그려내는 곳',
             tagline: '프롬프트가 플롯을 만나는 곳'
         },
         intro: {
