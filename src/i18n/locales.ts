@@ -7,7 +7,7 @@ export const dictionary = {
             tagline: "Where 'Prompt' meets 'Plot'"
         },
         intro: {
-            title: 'From Prompt to Plot',
+            title: 'From Prompt\nto Plot',
             promptTitle: 'Prompt',
             promptDesc: 'The spark of creation. With generative AI, a single sentence starts a universe.',
             plotTitle: 'Plot',
@@ -59,7 +59,7 @@ export const dictionary = {
             tagline: '프롬프트가 플롯을 만나는 곳'
         },
         intro: {
-            title: '프롬프트에서 플롯으로',
+            title: '프롬프트에서\n플롯으로',
             promptTitle: '프롬프트 (Prompt)',
             promptDesc: '창작의 불꽃입니다. 생성형 AI와 함께라면, 단 한 문장이 우주를 시작합니다.',
             plotTitle: '플롯 (Plot)',
