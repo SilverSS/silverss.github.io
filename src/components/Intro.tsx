@@ -9,7 +9,7 @@ export function Intro() {
     return (
         <Container size="lg" py={120}>
             <Flex direction="column" align="center" gap={60}>
-                <Title order={2} fw={300} size={48} ta="center" style={{ letterSpacing: '-0.02em' }}>
+                <Title order={2} fw={300} size={48} ta="center" style={{ letterSpacing: '-0.02em', whiteSpace: 'pre-line' }}>
                     {t.intro.title}
                 </Title>
 

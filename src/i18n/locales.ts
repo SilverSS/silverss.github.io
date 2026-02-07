@@ -3,11 +3,11 @@ export type Locale = 'en' | 'ko';
 export const dictionary = {
     en: {
         hero: {
-            subtitle: 'Drawing the plot of your story with the start of generative AI.',
+            subtitle: 'Drawing the plot of your story\nwith the start of generative AI.',
             tagline: "Where 'Prompt' meets 'Plot'"
         },
         intro: {
-            title: 'From Prompt\nto Plot',
+            title: 'From Prompt\nTo Plot',
             promptTitle: 'Prompt',
             promptDesc: 'The spark of creation. With generative AI, a single sentence starts a universe.',
             plotTitle: 'Plot',
