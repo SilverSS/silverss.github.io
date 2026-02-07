@@ -1,13 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Carousel } from '@mantine/carousel';
+// import Autoplay from 'embla-carousel-autoplay';
 import { Image, Box, Title, Text, Flex, Paper, Container } from '@mantine/core';
 import classes from './ContentShowcase.module.css';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export function ContentShowcase() {
     const { t } = useLanguage();
+    // const autoplay = useRef(Autoplay({ delay: 3000 })); // Autoplay removed
 
     // Reconstruct contentData inside component to use translation
     const contentData = [
@@ -46,9 +48,13 @@ export function ContentShowcase() {
             {/* Thumbnails Carousel */}
             <Box mb={50}>
                 <Carousel
-                    slideSize={{ base: '85%', sm: '40%', md: '30%' }}
+                    slideSize={{ base: '70%', sm: '40%', md: '30%' }}
                     slideGap="md"
-                    emblaOptions={{ align: 'center', containScroll: false }}
+                    emblaOptions={{
+                        loop: true,
+                        align: 'center',
+                        containScroll: false
+                    }}
                     withIndicators
                     initialSlide={initialIndex}
                     getEmblaApi={setEmbla}
@@ -56,9 +62,6 @@ export function ContentShowcase() {
                     classNames={{
                         indicator: classes.indicator,
                         indicators: classes.indicators,
-                    }}
-                    styles={{
-                        slide: { transition: 'transform 0.3s ease' },
                     }}
                 >
                     {contentData.map((item, index) => (
