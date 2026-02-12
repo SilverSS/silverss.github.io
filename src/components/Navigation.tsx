@@ -11,7 +11,7 @@ export function Navigation() {
     const { t, locale, changeLocale } = useLanguage();
     const pathname = usePathname();
 
-    if (pathname?.startsWith('/privacy')) {
+    if (pathname?.startsWith('/privacy') || pathname?.startsWith('/deletion-request')) {
         return null;
     }
 
