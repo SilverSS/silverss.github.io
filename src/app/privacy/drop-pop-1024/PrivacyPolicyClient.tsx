@@ -101,7 +101,18 @@ export function PrivacyPolicyClient() {
                 <List.Item>iOS: 설정 {'>'} 개인정보보호 {'>'} 추적 {'>'} 앱이 추적을 요청하도록 허용 끔</List.Item>
             </List>
 
-            <Title order={2} mt="xl" mb="sm">6. 개인정보 보호책임자</Title>
+            <Title order={2} mt="xl" mb="sm">6. 아동의 개인정보 보호</Title>
+            <Text mb="sm">
+                본 서비스는 모든 연령대가 이용할 수 있으며, 만 13세 미만 아동(이하 '아동')의 개인정보 보호를 위해 다음과 같은 조치를 취하고 있습니다.
+            </Text>
+            <List withPadding>
+                <List.Item>당사는 아동으로부터 개인 식별 정보를 고의로 수집하지 않습니다.</List.Item>
+                <List.Item>아동이 서비스를 이용하는 과정에서 수집될 수 있는 광고 식별자 등의 정보는 '아동 대상 서비스' 정책에 따라 맞춤형 광고 제공 목적으로 활용되지 않으며, 내부 운영 및 성과 측정 목적으로만 제한적으로 사용될 수 있습니다.</List.Item>
+                <List.Item>만약 당사가 아동의 개인정보를 부모의 동의 없이 수집한 것으로 확인될 경우, 지체 없이 해당 정보를 삭제하겠습니다.</List.Item>
+                <List.Item>아동의 법정대리인은 아동의 개인정보에 대한 열람, 정정 및 삭제를 요청할 수 있으며, 위 연락처로 문의해주시기 바랍니다.</List.Item>
+            </List>
+
+            <Title order={2} mt="xl" mb="sm">7. 개인정보 보호책임자</Title>
             <Text mb="sm">
                 서비스 이용 중 발생하는 모든 개인정보보호 관련 민원은 아래의 연락처로 문의해 주시기 바랍니다.
             </Text>
