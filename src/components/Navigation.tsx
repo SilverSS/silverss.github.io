@@ -5,8 +5,15 @@ import Link from 'next/link';
 import { useLanguage, Locale } from '../i18n/LanguageContext';
 import classes from './Navigation.module.css';
 
+import { usePathname } from 'next/navigation';
+
 export function Navigation() {
     const { t, locale, changeLocale } = useLanguage();
+    const pathname = usePathname();
+
+    if (pathname?.startsWith('/privacy')) {
+        return null;
+    }
 
     return (
         <Container size="xl" py="md">
